@@ -1,10 +1,10 @@
- {
+{
   "name": "daily-server",
   "version": "1.0.0",
   "description": "Servidor Node.js para o projeto Traveling Learning Languages",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Lucas",
@@ -13,6 +13,7 @@
     "express": "^4.18.2"
   }
 }
+
 
 
 
