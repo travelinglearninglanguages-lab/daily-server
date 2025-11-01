@@ -1,19 +1,21 @@
 const express = require('express');
+const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
 
-// Rota de teste
+// ✅ Rota principal
 app.get('/', (req, res) => {
   res.send('Servidor funcionando! 🚀');
 });
 
-// Exemplo de rota usando axios
+// Exemplo de rota POST
 app.post('/api', async (req, res) => {
-  const languagesRoom = req.body["languagesroom"];
+  const languagesRoom = req.body["languages-room"];
   try {
     const response = await axios.get('https://api.exemplo.com/dados');
     res.json({ message: 'Requisição feita com sucesso', data: response.data });
@@ -25,3 +27,4 @@ app.post('/api', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
+
