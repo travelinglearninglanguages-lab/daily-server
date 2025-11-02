@@ -9,12 +9,13 @@
   "keywords": [],
   "author": "LucasLima",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "cors": "^2.8.5"
-  }
+ "dependencies": {
+  "dotenv": "^16.3.1",
+  "express": "...",
+  "cors": "...",
+  "jsonwebtoken": "..."
 }
+  }
 
 
 
