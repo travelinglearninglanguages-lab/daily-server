@@ -19,8 +19,8 @@ app.use(cors());
 app.use(express.json());
 
 // Rota de teste
-app.get('/', (req, res) => {
-  res.send('Servidor funcionando! ✅');
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
 });
 
 // Rota para gerar token de anfitrião com nome e email
