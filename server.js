@@ -8,6 +8,10 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
+
 // 🔐 Chaves da API Daily.co
 const DAILY_API_KEY = process.env.DAILY_API_KEY;
 const DAILY_API_SECRET = process.env.DAILY_API_SECRET;
@@ -55,9 +59,4 @@ app.post('/host-token', (req, res) => {
     console.error('Erro ao gerar token:', error);
     res.status(500).json({ error: 'Erro ao gerar token' });
   }
-});
-
-// Inicia o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
