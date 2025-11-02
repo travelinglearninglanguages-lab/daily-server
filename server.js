@@ -23,7 +23,7 @@ app.get('/healthz', (req, res) => {
   res.status(200).send('OK');
 });
 
-/ Rota para gerar token de anfitrião com nome e email
+// Rota para gerar token de anfitrião com nome e email
 app.post('/host-token', (req, res) => {
   const { user_name, user_email } = req.body;
 
@@ -33,19 +33,20 @@ app.post('/host-token', (req, res) => {
   }
 
   try {
-    const token = jwt.sign(
-      {
-        room: ROOM_NAME,
-        is_owner: true,
-        user_name: 'Lucas Lima',
-        user_email: 'travelinglearninglanguages@gmail.com'
-      },
-      DAILY_API_SECRET,
-      {
-        issuer: DAILY_API_KEY,
-        expiresIn: '2h'
-      }
-    );
+  const token = jwt.sign(
+  {
+    room: ROOM_NAME,
+    is_owner: true,
+    user_name: 'LucasLima',
+    user_email: 'travelinglearninglanguages@gmail.com' // fixo
+  },
+  DAILY_API_SECRET,
+  {
+    issuer: DAILY_API_KEY,
+    expiresIn: '2h'
+  }
+);
+
 
  
     console.log(`Token gerado para ${user_name} (${user_email})`);
