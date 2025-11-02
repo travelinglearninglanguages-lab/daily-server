@@ -8,9 +8,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // 🔐 Chaves da API Daily.co
-const DAILY_API_KEY = '2ab788a3f114beea3c25415ff4ad9da1bf9a9ee92b716d6618d22c7531cb6049';
-const DAILY_API_SECRET = '2ab788a3f114beea3c25415ff4ad9da1bf9a9ee92b716d6618d22c7531cb6049';
-const ROOM_NAME = 'LanguagesRoom';
+const DAILY_API_KEY = process.env.DAILY_API_KEY;
+const DAILY_API_SECRET = process.env.DAILY_API_SECRET;
+const ROOM_NAME = process.env.ROOM_NAME;
+
 
 // Middleware
 app.use(cors());
